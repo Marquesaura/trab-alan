@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Inconsolata, Verdana, Geneva, Tahoma, sans-serif;
+}
+:root{
+--cor1 : #ffffff
+-- cor2: #d2d1d6
+-- cor3: #8784a4
+-- cor4: #4b486a
+-- cor5: #0c082b
+-- cor6: #f57261
+-- cor7: #e16151
+/* gradiente texto */
+-- grad_1: #f37362
+-- grad_2: #ffffff
+  
+}
+
+h1{
+    font-size: 40px;
+
+}
+#main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    min-height: 500px;
+    margin: auto;
+    box-sizing: border-box;
+}
