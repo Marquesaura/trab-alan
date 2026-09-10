@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
 
   <title>Gerador de Ingresso para Conferência</title>
@@ -21,24 +21,25 @@
     <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
     <h2> Secure your spot at next year's biggest coding conference.</h2>
 
-    <p>Upload Avatar</p>
-    <p>Drag and drop or click to upload</p>
-    <p>Upload your photo (JPG or PNG, max size: 500KB).</p>
-
 
     <form>
-
+      <div class="dados">
+        <label for="image">Upload Avatar</label> <br>
+        <input type="image" required placeholder = "Drag and drop or click to upload" class="upload-imagem"> <br>
+        <img src="assets/images/icon-info.svg" alt="info">
+        <p class="upload-p">Upload your photo (JPG or PNG, max size: 500KB).</p>
+      </div>
 
       <div class="dados">
-        <label for="nome">Full Name</label>
+        <label for="nome">Full Name</label> <br>
         <input type="text">
       </div>
       <div class="dados">
-        <label for="nome">Email Address</label>
+        <label for="email">Email Address</label> <br>
         <input type="email" required placeholder="example@email.com">
       </div>
       <div class="dados">
-        <label for="nome"> GitHub Username</label>
+        <label for="Username"> GitHub Username</label> <br>
         <input type="email" required placeholder="@yourusername">
       </div>
 
@@ -49,15 +50,14 @@
 
     <!-- Generated tickets starts -->
 
-    <p>Congrats, <!-- Full Name -->! Your ticket is ready.</p>
+    <!--<p>Congrats,  Full Name ! Your ticket is ready.</p>
 
-    <p>We've emailed your ticket to <!-- Email Address --> and will send updates in the run up to the event.</p>
+    <p>We've emailed your ticket to Email Address and will send updates in the run up to the event.</p>-->
   </main>
-  <p>Coding Conf
-    Jan 31, 2025 / Austin, TX</p>
+
 
   <!-- Generated tickets ends -->
-
+<script src="script.js"></script>
 </body>
 
 </html>
