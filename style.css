@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     font-family: Inconsolata, Verdana, Geneva, Tahoma, sans-serif;
+   
 
 }
 
@@ -21,6 +22,7 @@
 }
 
 body {
+     background-color: var(--cor5);
     width: 100%;
     min-height: 100vh;
     background-image: url('assets/images/pattern-lines.svg'), url('assets/images/pattern-squiggly-line-bottom-desktop.svg'), url('assets/images/pattern-squiggly-line-top.svg'), url('assets/images/pattern-circle.svg'), url('assets/images/background-desktop.png');
@@ -117,3 +119,6 @@ label {
     color: var(--cor5);
     font-weight: bold;
 }
+
+/* estilos pós-js */
+
