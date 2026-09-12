@@ -4,3 +4,7 @@
 - criacao de divs para divisao dos elementos do formulario
 ## 09/09 - noite
 - alteração de estilos no css (principalmente estilos do input)
+
+## 11/09 
+- modificação nos elementos em js
+- modificacao dos estilos dos elementos criados em js (problemas com alinhamento da mensagem após pedido do ticket)
