@@ -1,6 +1,6 @@
 const gerarBtn = document.getElementById('gerar-btn');
 const logo = document.querySelector('.logo')
-logo.style.display = "none";
+logo.style.display = 'none';
 
 
 gerarBtn.addEventListener('click', () => {
@@ -10,35 +10,50 @@ gerarBtn.addEventListener('click', () => {
 
 
 
-    if (nome == "" || email == "" || userGit == "") {
+    if (!nome || !email || !userGit) {
         alert("Complete the required fields!");
 
-
     } else {
-        gerarBtn.style.display = "none";
-        logo.style.display = "flex";
+        gerarBtn.style.display = 'none';
+        logo.style.display = 'flex';
+        
 
         const titulo = document.querySelector('h1');
         const subtitulo = document.querySelector('h2');
         const ticketImagem = document.createElement('img');
-        const form = document.querySelector('form');
-
-
-        titulo.textContent = `Congrats, ${nome}! Your ticket is ready!`;
-        subtitulo.textContent = `We've emailed your ticket to ${email} and will send updates in the run up to the event.`;
         ticketImagem.setAttribute('src', 'assets/images/pattern-ticket.svg');
+        const form = document.querySelector('form');
+        
+        const span = document.querySelector('span');
+        
+
+
+        titulo.style.display = 'none';
+
+        const mensagem = document.createElement('h1');
+        mensagem.textContent = 'Congrats';
+        mensagem.classList.add('mensagem-ticket');
+        span.append(mensagem);
+
+        const novoNome = document.createElement('h1');
+        novoNome.textContent = nome;
+        novoNome.classList.add('nome-alterado');
+        span.append(novoNome);
+
+        const resto = document.createElement('h1');
+        resto.textContent = '! Your ticket is ready!';
+        resto.classList.add('mensagem-ticket');
+        span.append(resto);
+
+        subtitulo.textContent = `We've emailed your ticket to ${email} and will send updates in the run up to the event.`;
+
         form.classList.add('ticket');
 
         const dadosEvent = document.createElement('p');
-        dadosEvent.textContent = "Jan 31, 2025 / Austin, TX";
-        form.append(dadosEvent)
-
-        const novoNome = document.createElement('p');
-        novoNome.textContent = nome;
-        novoNome.classList.add('nome-alterado')
-        form.append(novoNome)
+        dadosEvent.textContent = 'Jan 31, 2025 / Austin, TX';
+        form.append(dadosEvent);
 
 
 
     }
-})
+});
