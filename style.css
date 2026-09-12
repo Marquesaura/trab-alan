@@ -27,7 +27,7 @@ body {
     min-height: 100vh;
     background-image: url('assets/images/pattern-lines.svg'), url('assets/images/pattern-squiggly-line-bottom-desktop.svg'), url('assets/images/pattern-squiggly-line-top.svg'), url('assets/images/pattern-circle.svg'), url('assets/images/background-desktop.png');
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat;
-    background-position: center, bottom left, top right, center right, center;
+    background-position: center, bottom left, top right, top left, center;
     background-size: auto, auto, auto, auto, cover;
 
 }
@@ -57,6 +57,7 @@ h2 {
     font-weight: normal;
     margin: 15px 0;
     font-size: 20px;
+    text-align: center;
 }
 
 .dados {
@@ -71,6 +72,10 @@ input {
     border-radius: 8px;
     border: 1px solid rgba(210, 209, 214, 0.5);
     background-color: rgba(135, 132, 164, 0.2);
+}
+
+input:hover {
+    cursor: pointer;
 }
 
 .upload-imagem {
@@ -91,11 +96,15 @@ label {
 
 
 #main {
+    background-image: url(assets/images/pattern-circle.svg);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center right;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 800px;
+    max-width: 700px;
     min-height: 400px;
     margin: auto;
     box-sizing: border-box;
@@ -103,11 +112,6 @@ label {
 
 }
 
-#main-generator {
-    background-image: url('assets/images/pattern-ticket.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-}
 
 #gerar-btn {
     font-size: 20px;
@@ -118,6 +122,10 @@ label {
     border-radius: 8px;
     color: var(--cor5);
     font-weight: bold;
+}
+
+#gerar-btn:hover {
+    cursor: pointer;
 }
 
 /* estilos pós-js */
@@ -138,14 +146,28 @@ label {
     display: none;
 }
 
+.novo-estilo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
 .nome-alterado {
     background: linear-gradient(to right, var(--grad_1), var(--grad_2));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 20px;
-    align-items: left;
-    text-align: left;
 
+}
+
+.nome-alterado h1 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.nome-alterado p {
+    font-size: 20px;
 }
 
 .logo {
@@ -153,4 +175,17 @@ label {
     align-items: top left;
     justify-content: top left;
     margin-left: 0;
+}
+
+
+.mensagem-inicial {
+    color: var(--cor1);
+}
+.parabens{
+    align-items: left;
+    text-align: left;
+}
+
+@media screen and (max-width: 375px){
+
 }
