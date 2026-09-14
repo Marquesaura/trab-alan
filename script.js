@@ -9,7 +9,6 @@ gerarBtn.addEventListener('click', () => {
     const userGit = document.getElementById('username').value;
 
 
-
     if (!nome || !email || !userGit) {
         alert("Complete the required fields!");
 
@@ -23,18 +22,16 @@ gerarBtn.addEventListener('click', () => {
         const ticketImagem = document.createElement('img');
         ticketImagem.setAttribute('src', 'assets/images/pattern-ticket.svg');
         const form = document.querySelector('form');
-
         const span = document.querySelector('span');
+        const divAlterado = document.querySelector('#texto-alterado');
 
         subtitulo.style.display = 'none';
-
         titulo.style.display = 'none';
 
         const parabens = document.createElement('h1');
         parabens.textContent = 'Congrats,';
-        parabens.classList.add('mensagem-inicial');
+        parabens.classList.add('parabens');
         span.append(parabens);
-        parabens.classList.add = ('parabens')
 
         const novoNome = document.createElement('h1');
         novoNome.textContent = `${nome}!`;
@@ -48,27 +45,23 @@ gerarBtn.addEventListener('click', () => {
 
         const mensagem = document.createElement('p');
         mensagem.textContent = "We've emailed your ticket to";
-        mensagem.classList.add('mensagem-ticket');
-        span.append(mensagem);
+        mensagem.classList.add('mensagem-ticket1');
+        divAlterado.append(mensagem);
 
         const novoEmail = document.createElement('p');
         novoEmail.textContent = email;
-        novoEmail.classList.add('nome-alterado');
-        span.append(novoEmail);
+        novoEmail.classList.add('email-alterado');
+        divAlterado.append(novoEmail);
 
         const restoMensagem = document.createElement('p');
         restoMensagem.textContent = "and will send updates in the run up to the event.";
-        restoMensagem.classList.add('mensagem-ticket');
-        span.append(restoMensagem);
+        restoMensagem.classList.add('mensagem-ticket2');
+        divAlterado.append(restoMensagem);
 
         form.classList.add('ticket');
-        span.classList.add('novo-estilo')
 
         const dadosEvent = document.createElement('p');
         dadosEvent.textContent = 'Jan 31, 2025 / Austin, TX';
         form.append(dadosEvent);
-
-
-
     }
 });
