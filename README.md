@@ -8,3 +8,7 @@
 ## 11/09 
 - modificação nos elementos em js
 - modificacao dos estilos dos elementos criados em js (problemas com alinhamento da mensagem após pedido do ticket)
+
+## 13/09 
+- modificações em estilos (tentando fazer o efeito do ticket pós clique no botão)
+- falta: alinhar o texto embaixo do titulo principal pós click; mudar imagem no input de imagem; colocar o restante do texto de dentro do ticket
