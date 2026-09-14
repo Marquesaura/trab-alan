@@ -64,6 +64,9 @@ h2 {
     padding: 0 10px;
     margin: 15px;
 }
+#info-img{
+    margin-left: 20px;
+}
 
 input {
     margin: 15px;
@@ -83,14 +86,14 @@ input:hover {
     border: 2px dashed rgba(210, 209, 214, 0.5);
 }
 
-.upload-p {
+#upload-p {
     font-size: 10px;
-    margin-left: 30px;
+    margin-left: 40px;
     margin-top: -15px;
 }
 
 label {
-    margin: 15px auto 15px 0;
+    margin: 15px auto 15px 17px;
     color: var(--cor1);
 }
 
@@ -111,6 +114,14 @@ label {
 
 
 }
+.mensagem-upload {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    margin: 0;
+    pointer-events: none;
+    color: #888;
+}
 
 
 #gerar-btn {
@@ -122,6 +133,8 @@ label {
     border-radius: 8px;
     color: var(--cor5);
     font-weight: bold;
+    margin-bottom: 20px;
+    height: 50px;
 }
 
 #gerar-btn:hover {
@@ -145,6 +158,14 @@ label {
 .ticket .dados {
     display: none;
 }
+
+.upload-imagem {
+    background-image: url(assets/images/icon-upload.svg);
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 
 .nome-alterado {
     background: linear-gradient(to right, var(--grad_1), var(--grad_2));

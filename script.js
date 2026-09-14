@@ -7,10 +7,12 @@ gerarBtn.addEventListener('click', () => {
     const nome = document.getElementById('nome').value;
     const email = document.getElementById('email').value;
     const userGit = document.getElementById('username').value;
+    const uploadP = document.getElementById('upload-p');
 
 
     if (!nome || !email || !userGit) {
         alert("Complete the required fields!");
+        uploadP.style.color = "#e16151";
 
     } else {
         gerarBtn.style.display = 'none';

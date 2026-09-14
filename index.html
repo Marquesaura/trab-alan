@@ -14,21 +14,22 @@
 <body>
 
   <img src="assets/images/logo-full.svg" alt="logo" id="logo-full">
-  <!-- Form starts -->
+  
   <main id="main">
     <span>
       <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
       <h2> Secure your spot at next year's biggest coding conference.</h2>
     </span>
     <div id="texto-alterado"></div>
-
+<!-- Form starts -->
     <form>
       <img src="assets/images/logo-full.svg" alt="logo" class="logo">
       <div class="dados">
-        <label for="image">Upload Avatar</label> <br>
-        <input type="image" required placeholder="Drag and drop or click to upload" class="upload-imagem"> <br>
-        <img src="assets/images/icon-info.svg" alt="info">
-        <p class="upload-p">Upload your photo (JPG or PNG, max size: 500KB).</p>
+        <label for="upload">Upload Avatar</label> <br>
+        <input type="file" placeholder="Drag and drop or click to upload" class="upload-imagem">
+        <p class="mensagem-upload">Drag and drop or click to upload</p><br>
+        <img src="assets/images/icon-info.svg" alt="info" id="info-img">
+        <p id="upload-p">Upload your photo (JPG or PNG, max size: 500KB).</p>
       </div>
 
       <div class="dados">
