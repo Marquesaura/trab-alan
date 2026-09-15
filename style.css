@@ -64,7 +64,8 @@ h2 {
     padding: 0 10px;
     margin: 15px;
 }
-#info-img{
+
+#info-img {
     margin-left: 20px;
 }
 
@@ -114,6 +115,7 @@ label {
 
 
 }
+
 .mensagem-upload {
     position: absolute;
     top: 50%;
@@ -178,15 +180,7 @@ label {
 
 }
 
-.email-alterado {
-    background: linear-gradient(to right, var(--grad_1), var(--grad_2));
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-    font-size: 20px;
-    display: inline-block;
-    text-align: center;
-}
+
 
 .logo {
     height: 7vh;
@@ -207,23 +201,33 @@ label {
 
 }
 
-.texto-alterado {
-    display: table-column;
+#texto-alterado {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    width: 100vh;
 }
 
 .mensagem-ticket1 {
+    display: block;
+    width: auto;
+}
+
+.email-alterado {
+    background: linear-gradient(to right, var(--grad_1), var(--grad_2));
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-size: 20px;
     display: inline-block;
-    width: 30vh;
+    text-align: right;
 }
 
 .mensagem-ticket2 {
-    text-align: center;
-    display: block;
-    width: 300px;
+    text-align: left;
+    display: inline-block;
+    width: 30vh;
 }
 
 @media screen and (max-width: 375px) {}
