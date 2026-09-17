@@ -13,6 +13,7 @@ gerarBtn.addEventListener('click', () => {
     if (!nome || !email || !userGit) {
         alert("Complete the required fields!");
         uploadP.style.color = "#e16151";
+        
 
     } else {
         gerarBtn.style.display = 'none';
@@ -25,6 +26,7 @@ gerarBtn.addEventListener('click', () => {
         ticketImagem.setAttribute('src', 'assets/images/pattern-ticket.svg');
         const form = document.querySelector('form');
         const span = document.querySelector('span');
+        span.classList.add('span-alterado');
         const divAlterado = document.querySelector('#texto-alterado');
 
         subtitulo.style.display = 'none';
@@ -51,7 +53,7 @@ gerarBtn.addEventListener('click', () => {
         divAlterado.append(mensagem);
 
         const novoEmail = document.createElement('p');
-        novoEmail.textContent = email;
+        novoEmail.textContent = `@${email}`;
         novoEmail.classList.add('email-alterado');
         divAlterado.append(novoEmail);
 
@@ -64,6 +66,22 @@ gerarBtn.addEventListener('click', () => {
 
         const dadosEvent = document.createElement('p');
         dadosEvent.textContent = 'Jan 31, 2025 / Austin, TX';
+        dadosEvent.classList.add('dados-event')
         form.append(dadosEvent);
+
+        const fotoUser = document.createElement('img');
+        fotoUser.setAttribute('src', `https://github.com/${userGit}.png`);
+        fotoUser.classList.add('foto-user')
+        form.append(fotoUser);        
+
+        const nomeTicket = document.createElement('h2');
+        nomeTicket.textContent = nome;
+        nomeTicket.classList.add('nome-ticket');
+        form.append(nomeTicket);
+
+        const gitTicket = document.createElement('p');
+        gitTicket.textContent = `@${userGit}`;
+        gitTicket.classList.add('nome-ticket');
+        form.append(gitTicket);
     }
 });
