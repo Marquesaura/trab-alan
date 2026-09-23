@@ -1,7 +1,7 @@
 const gerarBtn = document.getElementById('gerar-btn');
 const logo = document.querySelector('.logo')
 logo.style.display = 'none';
-
+const fotoUser = document.createElement('img');
 
 gerarBtn.addEventListener('click', () => {
     const nome = document.getElementById('nome').value;
@@ -13,9 +13,14 @@ gerarBtn.addEventListener('click', () => {
     if (!nome || !email || !userGit) {
         alert("Complete the required fields!");
         uploadP.style.color = "#e16151";
-        
 
-    } else {
+
+    } else if (!fotoUser) {
+        fotoUser.setAttribute('src', 'assets/images/image-avatar.jpg');
+        fotoUser.classList.add('foto-user')
+        form.append(fotoUser);
+    }
+    else {
         gerarBtn.style.display = 'none';
         logo.style.display = 'flex';
 
@@ -28,6 +33,7 @@ gerarBtn.addEventListener('click', () => {
         const span = document.querySelector('span');
         span.classList.add('span-alterado');
         const divAlterado = document.querySelector('#texto-alterado');
+        const main = document.querySelector('#main')
 
         subtitulo.style.display = 'none';
         titulo.style.display = 'none';
@@ -61,6 +67,7 @@ gerarBtn.addEventListener('click', () => {
         restoMensagem.textContent = "and will send updates in the run up to the event.";
         restoMensagem.classList.add('mensagem-ticket2');
         divAlterado.append(restoMensagem);
+        
 
         form.classList.add('ticket');
 
@@ -72,7 +79,7 @@ gerarBtn.addEventListener('click', () => {
         const fotoUser = document.createElement('img');
         fotoUser.setAttribute('src', `https://github.com/${userGit}.png`);
         fotoUser.classList.add('foto-user')
-        form.append(fotoUser);        
+        form.append(fotoUser);
 
         const nomeTicket = document.createElement('h2');
         nomeTicket.textContent = nome;

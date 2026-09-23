@@ -35,7 +35,8 @@ body {
 #logo-full {
     width: 150px;
     display: block;
-    margin: 20px auto;
+    margin: auto;
+    margin-top: 10vh;
     padding-top: 20px;
 }
 
@@ -79,6 +80,14 @@ input {
     background-color: rgba(135, 132, 164, 0.2);
 }
 
+input[type="file"]::file-selector-button {
+    display: none;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    display: none;
+}
+
 input:hover {
     cursor: pointer;
 }
@@ -99,7 +108,6 @@ label {
     color: var(--cor1);
 }
 
-
 #main {
     background-image: url(assets/images/pattern-circle.svg);
     background-repeat: no-repeat;
@@ -109,7 +117,7 @@ label {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 700px;
+    max-width: 800px;
     min-height: 400px;
     margin: auto;
     box-sizing: border-box;
@@ -122,18 +130,21 @@ label {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    color: #888;
+    color: #d2d1d6;
     pointer-events: none;
     transition: 0.3s ease all;
     font-size: 13px;
+    white-space: nowrap;
 }
 
-.mensagem-upload.hidden {
-    opacity: 0;
-    visibility: hidden;
+input[type="file"] {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
 }
 
-
+input[type="file"]::file-selector-button {
+    display: none;
+}
 
 #gerar-btn {
     font-size: 20px;
@@ -156,11 +167,13 @@ label {
 .borda-input {
     border-color: var(--cor7);
 }
-.span-alterado{
-    width: 140vh;
+
+.span-alterado {
+    width: 700px;
     justify-content: center;
     align-items: center;
 }
+
 .ticket {
     background-image: url('assets/images/pattern-ticket.svg');
     background-repeat: no-repeat;
@@ -203,24 +216,28 @@ label {
     align-items: top left;
     justify-content: top left;
     margin: 20px 35% 15px 0;
-    
+
 
 }
-.dados-event{
+
+.dados-event {
     font-size: 15px;
     opacity: 0.8;
 }
-.foto-user{
+
+.foto-user {
     width: 85px;
     border-radius: 20%;
     align-items: left;
     margin-right: 60%;
     display: inline-block;
 }
-.nome-ticket{
+
+.nome-ticket {
     display: inline-block;
     font-size: 20px;
 }
+
 .mensagem-inicial {
     color: var(--cor1);
 
@@ -233,11 +250,12 @@ label {
 }
 
 #texto-alterado {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: auto auto;
     justify-content: center;
     align-items: center;
-    width: 110vh;
+    width: 120vh;
+    gap: 4px;
 }
 
 .mensagem-ticket1 {
@@ -257,9 +275,9 @@ label {
 }
 
 .mensagem-ticket2 {
-    text-align: left;
+    text-align: center;
     display: block;
-    width: 30vh;
+    grid-column: 1 / -1;
 }
 
 @media screen and (max-width: 375px) {}

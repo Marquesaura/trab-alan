@@ -12,3 +12,8 @@
 13/09 
 - modificações em estilos (tentando fazer o efeito do ticket pós clique no botão)
 - falta: alinhar o texto embaixo do titulo principal pós click; mudar imagem no input de imagem; colocar o restante do texto de dentro do ticket
+
+22/09
+- alteração nos estilos do input (retirada do botão (inserir imagem) e mensagem automatica);
+- correção na disposição dos elementos do texto pós criacao do ticket;
+- recriação da foto de info e informaçoes sobre imagem a ser feita upload;
