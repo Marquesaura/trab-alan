@@ -4,53 +4,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
-
   <title>Gerador de Ingresso para Conferência</title>
 </head>
 
 <body>
+  <div class="decor" aria-hidden="true"></div>
 
-  <img src="assets/images/logo-full.svg" alt="logo" id="logo-full">
+  <header class="header">
+    <img src="assets/images/logo-full.svg" alt="Coding Conf" class="header__logo">
+  </header>
 
+  <main class="main">
 
-  <main id="main">
-    <span>
-      <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
-      <h2> Secure your spot at next year's biggest coding conference.</h2>
-    </span>
-    <div id="texto-alterado"></div>
-    <!-- Form starts -->
-    <form>
-      <img src="assets/images/logo-full.svg" alt="logo" class="logo">
-      <div class="dados">
-        <input draggable="true" id="upload" type="file" class="upload-imagem" name="upload"
-          value="./assets/images/image-avatar.jpg">
-        <label for="upload" class="mensagem-upload">
-          Drag and drop or click to upload
-        </label>
-        <br>
-        <img src="assets/images/icon-info.svg" alt="icon info" id="info-img">
-        <p id="upload-p">Upload your photo (JPG or PNG, max size: 500KB).</p>
+    <!-- Visão 1: formulário -->
+    <section id="form-view" class="view">
+      <h1 class="title">Your Journey to Coding Conf 2025 Starts Here!</h1>
+      <p class="subtitle">Secure your spot at next year's biggest coding conference.</p>
+
+      <form id="ticket-form" class="form" novalidate>
+
+        <!-- Avatar -->
+        <div class="field">
+          <label class="label" for="avatar">Upload Avatar</label>
+          <div class="dropzone" id="dropzone">
+            <input type="file" id="avatar" name="avatar" class="dropzone__input"
+              accept="image/png, image/jpeg" aria-describedby="avatar-message">
+            <span class="dropzone__icon">
+              <img id="avatar-preview" src="assets/images/icon-upload.svg" alt="">
+            </span>
+            <p class="dropzone__text" id="dropzone-text">Drag and drop or click to upload</p>
+            <div class="dropzone__actions" id="dropzone-actions" hidden>
+              <button type="button" class="chip chip--underline" id="remove-btn">Remove image</button>
+              <button type="button" class="chip" id="change-btn">Change image</button>
+            </div>
+          </div>
+          <p class="message" id="avatar-message">
+            <span class="message__icon" aria-hidden="true"></span>
+            <span class="message__text">Upload your photo (JPG or PNG, max size: 500KB).</span>
+          </p>
+        </div>
+
+        <!-- Nome -->
+        <div class="field">
+          <label class="label" for="nome">Full Name</label>
+          <input class="input" type="text" id="nome" name="nome" autocomplete="name"
+            aria-describedby="nome-message">
+          <p class="message message--error" id="nome-message" hidden>
+            <span class="message__icon" aria-hidden="true"></span>
+            <span class="message__text"></span>
+          </p>
+        </div>
+
+        <!-- Email -->
+        <div class="field">
+          <label class="label" for="email">Email Address</label>
+          <input class="input" type="email" id="email" name="email" autocomplete="email"
+            placeholder="example@email.com" aria-describedby="email-message">
+          <p class="message message--error" id="email-message" hidden>
+            <span class="message__icon" aria-hidden="true"></span>
+            <span class="message__text"></span>
+          </p>
+        </div>
+
+        <!-- GitHub -->
+        <div class="field">
+          <label class="label" for="username">GitHub Username</label>
+          <input class="input" type="text" id="username" name="username" autocomplete="off"
+            autocapitalize="off" spellcheck="false" placeholder="@yourusername"
+            aria-describedby="username-message">
+          <p class="message message--error" id="username-message" hidden>
+            <span class="message__icon" aria-hidden="true"></span>
+            <span class="message__text"></span>
+          </p>
+        </div>
+
+        <button type="submit" class="btn" id="gerar-btn">Generate My Ticket</button>
+      </form>
+    </section>
+
+    <!-- Visão 2: ingresso -->
+    <section id="ticket-view" class="view" hidden>
+      <h1 class="title" id="ticket-title" tabindex="-1">
+        Congrats, <span class="gradient-text" id="t-name"></span>! Your ticket is ready.
+      </h1>
+      <p class="lead">
+        We've emailed your ticket to <span class="accent" id="t-email"></span>
+        and will send updates in the run up to the event.
+      </p>
+
+      <div class="ticket-wrap">
+        <article class="ticket" aria-label="Your conference ticket">
+          <div class="ticket__top">
+            <img src="assets/images/logo-full.svg" alt="Coding Conf" class="ticket__logo">
+            <p class="ticket__date">Jan 31, 2025 / Austin, TX</p>
+          </div>
+          <div class="ticket__user">
+            <img class="ticket__avatar" id="t-avatar" src="" alt="">
+            <div class="ticket__info">
+              <p class="ticket__name" id="t-fullname"></p>
+              <p class="ticket__github">
+                <img src="assets/images/icon-github.svg" alt="" class="ticket__github-icon">
+                <span id="t-github"></span>
+              </p>
+            </div>
+          </div>
+          <p class="ticket__number" aria-label="Ticket number"><span id="t-number">#01609</span></p>
+        </article>
       </div>
-
-      <div class="dados">
-        <label for="nome">Full Name</label> <br>
-        <input type="text" id="nome" required placeholder="John Doe">
-      </div>
-      <div class="dados">
-        <label for="email">Email Address</label> <br>
-        <input type="email" id="email" required placeholder="example@email.com">
-      </div>
-      <div class="dados">
-        <label for="username">GitHub Username</label> <br>
-        <input type="text" id="username" required placeholder="@yourusername">
-      </div>
-
-    </form>
-    <button id="gerar-btn">Generate My Ticket</button>
+    </section>
 
   </main>
 
